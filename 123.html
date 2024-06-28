@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>my button</title>
+    <link rel="website icon"type="png"
+    href="shaddy-favicon.gif">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  /* CSS styles for the menu icon */
+  .menu-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  .bar {
+    width: 80%;
+    height: 3px;
+    background-color: #333;
+    margin: 4px 0;
+    transition: background-color 0.3s, transform 0.3s ease;
+  }
+  .menu-icon.open .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .menu-icon.open .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-icon.open .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  
+  /* CSS styles for the navigation menu */
+  .navigation {
+    position: fixed;
+    top: 0;
+    left: -200px; /* Off-screen initially */
+    width: 200px;
+    height: 100%;
+    background-color: #f0f0f0;
+    transition: left 0.3s ease;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  .navigation.open {
+    left: 0; /* Slide in when menu is open */
+  }
+  .navigation ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  .navigation ul li {
+    margin-bottom: 10px;
+  }
+  .navigation ul li a {
+    color: #333;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+  }
+  .navigation ul li a:hover {
+    color: #007bff;
+  }
+</style>
+</head>
+<body>
+
+<!-- Menu icon -->
+<div class="menu-icon" onclick="toggleMenu()">
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+</div>
+
+<!-- Navigation menu -->
+<div class="navigation" id="navigation">
+  <ul>
+    <li><a href="https//intagram">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</div>
+
+<script>
+  function toggleMenu() {
+    var menuIcon = document.querySelector('.menu-icon');
+    var navigation = document.getElementById('navigation');
+    
+    // Toggle 'open' class on menu icon
+    menuIcon.classList.toggle('open');
+    
+    // Toggle 'open' class on navigation menu
+    navigation.classList.toggle('open');
+  }
+</script>
+
+</body>
+</html>

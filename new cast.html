@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  .menu-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  .bar {
+    width: 80%;
+    height: 3px;
+    background-color: #e21818;
+    margin: 4px 0;
+    transition: background-color 0.3s, transform 0.3s ease;
+  }
+  .menu-icon.open .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .menu-icon.open .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-icon.open .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  body{background-color:black ;}
+</style>
+</head>
+<body>
+
+<div class="menu-icon" onclick="toggleMenu()">
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+</div>
+<div class="navigation" id="navigation">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </div>
+
+<script>
+  function toggleMenu() {
+    var menuIcon = document.querySelector('.menu-icon');
+    menuIcon.classList.toggle('open');
+    // Add your menu toggle logic here, e.g., show/hide menu
+    shaddy
+  }
+</script>
+<p style="color: #49fa13;text-align: center;">shaddy</p>
+
+</body>
+</html>

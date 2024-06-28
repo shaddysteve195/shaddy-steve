@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  .menu-icon {
+    display: inline-block;
+    cursor: pointer;
+    padding: 10px;
+  }
+  .bar {
+    width: 25px;
+    height: 3px;
+    background-color: #f71414;
+    margin: 5px 0;
+    transition: 0.4s;
+  }
+  .change .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 5px);
+  }
+  .change .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .change .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -5px);
+  }
+</style>
+</head>
+<body>
+
+<div class="menu-icon" onclick="toggleMenu()">
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+</div>
+
+<script>
+  function toggleMenu() {
+    var menuIcon = document.querySelector('.menu-icon');
+    menuIcon.classList.toggle('change');
+    // Add your menu toggle logic here
+  }
+</script>
+
+</body>
+</html>
